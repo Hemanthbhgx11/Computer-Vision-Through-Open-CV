@@ -29,22 +29,22 @@ Image Processing techniques, and Real-Time AI applications using Python.
 
 # Table of Contents
 
-| No. | Section | Description |
-|:--:|:---------|:------------|
-| 01 | [Overview](#overview) | Introduction to the Computer Vision Laboratory |
-| 02 | [Features](#features) | Key capabilities and highlights of the repository |
-| 03 | [Repository Structure](#repository-structure) | Folder hierarchy and project organization |
-| 04 | [Practical Experiments](#practical-experiments) | List of all OpenCV laboratory experiments |
-| 05 | [Local Setup (VS Code)](#local-setup-vs-code) | Installation and execution using Visual Studio Code |
-| 06 | [Google Colab Setup](#google-colab) | Running the project in Google Colab |
-| 07 | [Requirements](#requirements) | Required Python packages and dependencies |
-| 08 | [Technology Stack](#technology-stack) | Languages, frameworks, and tools used |
-| 09 | [Sample Outputs](#sample-outputs) | Screenshots and experiment results |
-| 10 | [Learning Outcomes](#learning-outcomes) | Skills and concepts gained from the laboratory |
-| 11 | [Contributing](#contributing) | Guidelines for contributing to the repository |
-| 12 | [Repository Stats](#repository-stats) | GitHub statistics and activity |
-| 13 | [Support](#support) | How to support the project |
-| 14 | [Author](#author) | Author information |
+| No. | Section | Link |
+|:--:|:--------|:-----|
+| 01 | Overview | [Go to Section](#overview) |
+| 02 | Features | [Go to Section](#features) |
+| 03 | Repository Structure | [Go to Section](#repository-structure) |
+| 04 | Practical Experiments | [Go to Section](#practical-experiments) |
+| 05 | Local Setup (VS Code) | [Go to Section](#local-setup-vs-code) |
+| 06 | Google Colab | [Go to Section](#google-colab) |
+| 07 | Requirements | [Go to Section](#requirements) |
+| 08 | Technology Stack | [Go to Section](#technology-stack) |
+| 09 | Sample Outputs | [Go to Section](#sample-outputs) |
+| 10 | Learning Outcomes | [Go to Section](#learning-outcomes) |
+| 11 | Contributing | [Go to Section](#contributing) |
+| 12 | Repository Stats | [Go to Section](#repository-stats) |
+| 13 | Support | [Go to Section](#support) |
+| 14 | Author | [Go to Section](#author) |
 ---
 
 # 📌 Overview
