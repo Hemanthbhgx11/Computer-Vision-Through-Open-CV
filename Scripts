@@ -1,1 +1,116 @@
+import os
+import sys
+import cv2
+import numpy as np
 
+def get_user_image():
+    """
+    Prompts the user to input an image path, validates that the file exists,
+    and reads it into OpenCV.
+    """
+    print("====================================================")
+    print("      OPENCV IMAGE TRANSFORMATION TOOL              ")
+    print("====================================================\n")
+
+    # 1. Get input from user
+    image_path = input("Please enter the path to your image file: ").strip()
+
+    # Clean up accidental outer quotes if the user dragged-and-dropped the file
+    image_path = image_path.strip("'\"")
+
+    # 2. Validate if the file path exists on disk
+    if not os.path.exists(image_path):
+        print(f"\n[ERROR] The file path '{image_path}' does not exist.")
+        print("Please check the spelling or absolute path and try again.")
+        sys.exit(1)
+
+    # 3. Attempt to read the image using OpenCV
+    img = cv2.imread(image_path)
+
+    # Check if OpenCV successfully decoded the image matrix
+    if img is None:
+        print(f"\n[ERROR] Could not decode image.")
+        print("The file might be corrupted, or it is an unsupported format.")
+        sys.exit(1)
+
+    print(f"\n[SUCCESS] Image loaded successfully!")
+    print(f"Original Resolution: {img.shape[1]}x{img.shape[0]} (Width x Height)")
+    print(f"Color Channels: {img.shape[2]} (BGR order)\n")
+
+    return img, image_path
+
+
+def apply_transformations(img):
+    """
+    Applies various geometric transformations to the input image matrix.
+    """
+    h, w = img.shape[:2]
+    transformations = {}
+
+    # --- 1. RESIZING (Scaling down to 50%) ---
+    # fx and fy are scaling factors for width and height.
+    transformations["Resized_50Percent"] = cv2.resize(
+        img, (0, 0), fx=0.5, fy=0.5, interpolation=cv2.INTER_LINEAR
+    )
+
+    # --- 2. FLIPPING (Horizontal Mirror Effect) ---
+    # 1 = horizontal flip, 0 = vertical flip, -1 = both.
+    transformations["Flipped_Horizontal"] = cv2.flip(img, 1)
+
+    # --- 3. ROTATION (45 Degrees Clockwise) ---
+    # Step A: Get center point of the image
+    center = (w // 2, h // 2)
+    # Step B: Create a 2D rotation matrix (center, angle, scale)
+    # Negative angle rotates clockwise in OpenCV's coordinate system
+    rotation_matrix = cv2.getRotationMatrix2D(center, -45, 1.0)
+    # Step C: Warp the image affine grid using the matrix
+    transformations["Rotated_45_Degrees"] = cv2.warpAffine(img, rotation_matrix, (w, h))
+
+    # --- 4. TRANSLATION (Shifting 100px Right, 50px Down) ---
+    # Translation matrix structure: [[1, 0, tx], [0, 1, ty]]
+    translation_matrix = np.float32([[1, 0, 100], [0, 1, 50]])
+    transformations["Translated_Shifted"] = cv2.warpAffine(img, translation_matrix, (w, h))
+
+    return transformations
+
+
+def save_and_show_results(original, transformed_dict, source_path):
+    """
+    Saves the output images to disk and pops up window previews.
+    """
+    # Extract directory and filename to save results in the same folder
+    dir_name, file_name = os.path.split(source_path)
+    name_part, ext_part = os.path.splitext(file_name)
+
+    print("--- Saving Transformed Outputs ---")
+
+    # Display the original image
+    cv2.imshow("Original Image", original)
+
+    # Iterate through the dictionary to save and display each transformation
+    for title, process_img in transformed_dict.items():
+        # Generate a distinct filename like "processed_Resized_50Percent.jpg"
+        output_filename = f"processed_{title}{ext_part}"
+        output_path = os.path.join(dir_name, output_filename) if dir_name else output_filename
+
+        # Save to disk
+        cv2.imwrite(output_path, process_img)
+        print(f"Saved: {output_path}")
+
+        # Open up a GUI window preview
+        cv2.imshow(title, process_img)
+
+    print("\n[INFO] All windows are open. Click on any window and press ANY KEY to exit.")
+    cv2.waitKey(0)  # Execution pauses here until a key is pressed
+    cv2.destroyAllWindows()
+
+
+if __name__ == "__main__":
+    # Step 1: Request path from user and validate it
+    original_image, source_file_path = get_user_image()
+
+    # Step 2: Run processing transformations
+    processed_outputs = apply_transformations(original_image)
+
+    # Step 3: Write outputs to files and render them on screen
+    save_and_show_results(original_image, processed_outputs, source_file_path)
