@@ -3,7 +3,7 @@
 <!-- ========================================================= -->
 
 <h1 align="center">
-👁️ Computer Vision & OpenCV Laboratory
+👁️ Computer Vision & OpenCV 
 </h1>
 
 <p align="center">
@@ -96,17 +96,6 @@ Computer-Vision-Lab
 │
 ├── README.md
 ├── requirements.txt
-│
-├── images/
-│
-├── notebooks/
-│
-├── datasets/
-│
-├── outputs/
-│
-├── models/
-│
 └── scripts/
       │
       ├── 01_image_handling.py
@@ -145,7 +134,7 @@ Computer-Vision-Lab
 ## Clone Repository
 
 ```bash
-git clone https://github.com/your-username/computer-vision-lab.git
+git clone https://github.com/your-username/computer-.git
 
 cd computer-vision-lab
 ```
