@@ -137,7 +137,7 @@ Computer-Vision-Lab
 ## Clone Repository
 
 ```bash
-git clone https://github.com/your-username/computer-.git
+git clone https://github.com/Hemanthbhgx11/Computer-Vision-Through-Open-CV.git
 
 cd computer-vision-lab
 ```
