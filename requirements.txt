@@ -1,0 +1,74 @@
+For your **Computer Vision & OpenCV** (including OpenCV, NumPy, Matplotlib, image processing, feature detection, MobileNet SSD, and YOLOv8), here is a clean and comprehensive `requirements.txt`.
+# Core Libraries
+numpy>=2.0.0
+opencv-python>=4.10.0
+matplotlib>=3.10.0
+pillow>=11.0.0
+
+# Scientific Computing
+scipy>=1.15.0
+
+# Machine Learning
+scikit-learn>=1.7.0
+
+# Image Processing
+scikit-image>=0.25.0
+
+# Data Handling
+pandas>=2.3.0
+
+# Progress Bars
+tqdm>=4.67.0
+
+# Jupyter Notebook Support
+jupyter>=1.1.0
+ipykernel>=6.30.0
+
+# Deep Learning (YOLOv8)
+ultralytics>=8.3.0
+
+# Optional: PyTorch (required by YOLOv8)
+torch
+torchvision
+torchaudio
+```
+
+---
+
+## Install
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## For Google Colab
+
+Most packages are already installed. You usually only need:
+
+```python
+!pip install ultralytics
+```
+
+---
+
+## Minimal `requirements.txt`
+
+If you want to keep the repository lightweight, use this instead:
+
+```txt
+numpy
+opencv-python
+matplotlib
+pillow
+scipy
+scikit-image
+pandas
+ultralytics
+torch
+torchvision
+torchaudio
+```
+
+This minimal version is recommended for GitHub repositories because it lets `pip` resolve compatible versions automatically while still covering all the libraries needed for your OpenCV and YOLOv8 experiments.
