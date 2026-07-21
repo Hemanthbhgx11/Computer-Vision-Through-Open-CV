@@ -27,21 +27,24 @@ Image Processing techniques, and Real-Time AI applications using Python.
 
 ---
 
-# 📑 Table of Contents
+# Table of Contents
 
-- 📌 Overview
-- ✨ Features
-- 📂 Repository Structure
-- 🧪 Practical Experiments
-- 💻 Running Locally
-- ☁ Running on Google Colab
-- 📦 Installation
-- 📚 Tech Stack
-- 📸 Sample Outputs
-- 🎯 Learning Outcomes
-- 🤝 Contributing
-- 👨‍💻 Author
-
+| No. | Section | Description |
+|:--:|:---------|:------------|
+| 01 | [Overview](#overview) | Introduction to the Computer Vision Laboratory |
+| 02 | [Features](#features) | Key capabilities and highlights of the repository |
+| 03 | [Repository Structure](#repository-structure) | Folder hierarchy and project organization |
+| 04 | [Practical Experiments](#practical-experiments) | List of all OpenCV laboratory experiments |
+| 05 | [Local Setup (VS Code)](#local-setup-vs-code) | Installation and execution using Visual Studio Code |
+| 06 | [Google Colab Setup](#google-colab) | Running the project in Google Colab |
+| 07 | [Requirements](#requirements) | Required Python packages and dependencies |
+| 08 | [Technology Stack](#technology-stack) | Languages, frameworks, and tools used |
+| 09 | [Sample Outputs](#sample-outputs) | Screenshots and experiment results |
+| 10 | [Learning Outcomes](#learning-outcomes) | Skills and concepts gained from the laboratory |
+| 11 | [Contributing](#contributing) | Guidelines for contributing to the repository |
+| 12 | [Repository Stats](#repository-stats) | GitHub statistics and activity |
+| 13 | [Support](#support) | How to support the project |
+| 14 | [Author](#author) | Author information |
 ---
 
 # 📌 Overview
