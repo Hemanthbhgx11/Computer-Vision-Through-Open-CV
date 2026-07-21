@@ -1,9 +1,9 @@
 <!-- ========================================================= -->
-<!-- COMPUTER VISION LAB -->
+<!-- COMPUTER VISION  -->
 <!-- ========================================================= -->
 
 <h1 align="center">
-👁️ Computer Vision & OpenCV Laboratory
+👁️ Computer Vision & OpenCV 
 </h1>
 
 <p align="center">
